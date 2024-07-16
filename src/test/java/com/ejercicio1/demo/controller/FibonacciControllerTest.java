@@ -2,14 +2,14 @@ package com.ejercicio1.demo.controller;
 
 import com.ejercicio1.demo.model.FibonacciSeries;
 import com.ejercicio1.demo.service.FibonacciService;
+import com.ejercicio1.demo.repository.FibonacciSeriesRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -30,6 +30,9 @@ public class FibonacciControllerTest {
 
     @MockBean
     private FibonacciService fibonacciService;
+
+    @MockBean
+    private FibonacciSeriesRepository repository; // Añadido
 
     private FibonacciSeries fibonacciSeries;
 
